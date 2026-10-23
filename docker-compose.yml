@@ -1,0 +1,28 @@
+# Kingpin master (hypov8) + Node server-list dashboard (same VPS)
+
+services:
+  kingpin-master:
+    build: .
+    image: kingpin-master:local
+    restart: unless-stopped
+    ports:
+      - "27900:27900/udp"
+      - "27950:27950/udp"
+      - "28900:28900/tcp"
+    environment:
+      VERBOSE: "3"
+
+  web:
+    build: ./web
+    image: kingpin-master-web:local
+    restart: unless-stopped
+    depends_on:
+      - kingpin-master
+    ports:
+      - "80:8080"
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      MASTER_HOST: kingpin-master
+      MASTER_PORT: "27900"
+      PUBLIC_MASTER_HOST: master.shavargo.com

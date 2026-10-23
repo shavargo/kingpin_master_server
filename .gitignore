@@ -1,4 +1,10 @@
 .*
+!.gitignore
+!.dockerignore
 include/*
 lib/*
 msvc/*
+bin/
+src/*.o
+src/*.d
+web/node_modules/

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<title>Kingpin servers | master.shavargo.com</title>
+	<meta name="description" content="Servers registered on the master.shavargo.com Kingpin master mirror" />
+	<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+	<main class="wrap">
+		<header>
+			<h1>Kingpin servers</h1>
+			<p class="lede">
+				Servers currently registered on this master mirror
+				(<strong>master.shavargo.com</strong>).
+			</p>
+			<p class="summary" id="summary">Loading…</p>
+		</header>
+
+		<div class="toolbar">
+			<button type="button" class="refresh" id="refresh">Refresh</button>
+		</div>
+
+		<div id="status" class="status" hidden></div>
+
+		<p class="section-label" id="sectionLabel">Kingpin</p>
+
+		<div class="table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>map</th>
+						<th>players</th>
+						<th>ping</th>
+						<th>address</th>
+					</tr>
+				</thead>
+				<tbody id="rows">
+					<tr><td colspan="5" class="empty">Querying master…</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<footer>
+			<p>Auto-refresh every 30s</p>
+		</footer>
+	</main>
+
+	<script src="/app.js"></script>
+</body>
+</html>
